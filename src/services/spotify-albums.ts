@@ -17,11 +17,12 @@ export class SpotifyAlbums {
      *      3.  For each playlist, we'll fetch its tracks so we can get the albums
      */
 
+    // Step 1. Get new releases list
+    
     static async fetchNewReleases(): Promise<AlbumsResponse>{
 
-        // Step 1. Get new releases list
         try {
-            const res = await fetch(`${apiBaseURL}/browse/new-releases?offset=1&limit=2`, {
+            const res = await fetch(`${apiBaseURL}/browse/new-releases?offset=1&limit=50`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${await SpotifyAuthService.getAccessToken()}`
@@ -41,4 +42,7 @@ export class SpotifyAlbums {
             throw err;
         }
     }
+
+
+    
 }

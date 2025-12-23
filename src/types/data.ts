@@ -94,5 +94,21 @@ export type Album = {
 };
 
 export type AlbumsResponse = {
-  albums: Album[];
+  albums: {
+    href: string;
+    limit: number;
+    next: string | null;
+    offset: number;
+    previous: string | null;
+    total: number;
+    items: Album[];
+  };
 };
+
+
+export type FinalAlbumList = {
+  id: string;
+  name: string;
+  artists: string[];
+  image?: Image;
+}

@@ -17,4 +17,17 @@ Bun.serve({
 app.route('/api/auth', authRoutes);
 app.route('/api/albums', spotifyAlbumRoutes)
 
+app.get('/api/albums/get-new-releasess', (c) => {
+    return c.render(
+       <>
+        <title>About Page</title>
+        <meta name='description' content='This is the about page.' />
+        about page content
+       </>
+    )
+})
+
+
+
+
 export default app;
