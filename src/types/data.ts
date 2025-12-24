@@ -107,8 +107,8 @@ export type AlbumsResponse = {
 
 
 export type FinalAlbumList = {
-  id: string;
-  name: string;
-  artists: string[];
+  id?: string;
+  name?: string;
+  artists?: string[];
   image?: Image;
 }

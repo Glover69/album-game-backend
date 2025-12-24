@@ -9,7 +9,7 @@ export function AlbumList({ albums }: { albums: FinalAlbumList[] }) {
                     <div key={album.id} style={{ border: '1px solid #ccc', padding: '10px' }}>
                         {album.image && <img src={album.image.url} alt={album.name} style={{ width: '100%' }} />}
                         <h3>{album.name}</h3>
-                        <p>{album.artists.map(a => a).join(', ')}</p>
+                        <p>{album?.artists?.map(a => a).join(', ')}</p>
                        {/* <small>{album.release_date}</small> */}
                     </div>
                 ))}
