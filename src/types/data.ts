@@ -94,5 +94,42 @@ export type Album = {
 };
 
 export type AlbumsResponse = {
-  albums: Album[];
+  albums: {
+    href: string;
+    limit: number;
+    next: string | null;
+    offset: number;
+    previous: string | null;
+    total: number;
+    items: Album[];
+  };
 };
+
+
+export type FinalAlbumList = {
+  id?: string;
+  name?: string;
+  artists?: string[];
+  image?: Image;
+  release_date?: string;
+}
+
+
+
+export type GameQuestion = {
+  id: string;                    // Unique question ID
+  albumCover: string;            // Image URL
+  albumName: string;             // "Blonde"
+  correctAnswer: string;         // "Frank Ocean"
+  options: string[];             // ["Frank Ocean", "Tyler the Creator", "Kendrick Lamar", "Drake"]
+  genre?: string;                // "R&B" (optional, for hints)
+  difficulty?: 'easy' | 'medium' | 'hard';
+  releaseDate?: string;          // 2016 (optional extra info)
+}
+
+// The complete payload sent to frontend
+export type GameData = {
+  questions: GameQuestion[];     // Array of 100 questions
+  totalQuestions: number;        // 100
+  generatedAt?: string;           // Timestamp
+}

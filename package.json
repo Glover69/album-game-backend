@@ -13,6 +13,8 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "hono": "^4.11.1"
+    "csv-writer": "^1.6.0",
+    "hono": "^4.11.1",
+    "mongoose": "^9.0.2"
   }
 }
