@@ -1,0 +1,8 @@
+services:
+# Cron job to generate daily questions
+  - type: cron
+    name: daily-game-generator
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    schedule: "0 0 * * *"  # Every day at midnight UTC
+    dockerCommand: "bun run src/scripts/generate-daily.ts"

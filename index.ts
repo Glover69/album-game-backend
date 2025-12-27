@@ -25,13 +25,10 @@ app.use('*', logger());
 
 
 
-if (import.meta.main) {
-  Bun.serve({
+Bun.serve({
     fetch: app.fetch,
     port: process.env.PORT || 3030,
-  })
-  console.log("Server running on port 3030");
-}
+})
 
 app.route('/api/auth', authRoutes);
 app.route('/api/albums', spotifyAlbumRoutes)
