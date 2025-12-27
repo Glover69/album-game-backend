@@ -1,4 +1,18 @@
 {
+  "version": 2,
+  "name": "uncoverrr-backend",
+  "builds": [
+    {
+      "src": "/dist/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/index.js"
+    }
+  ],
   "crons": [
     {
       "path": "/api/game/cron/generate-daily-game",
