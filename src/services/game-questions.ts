@@ -37,7 +37,8 @@ export class GameQuestions {
           albumCover: albums[count]?.image?.url || "",
           albumName: albums[count]?.name || "",
           correctAnswer: albums[count]?.artists?.[0] || "",
-          options: shuffledOptions
+          options: shuffledOptions,
+          releaseDate: albums[count]?.release_date
         }
 
         // Push structured object + update count
@@ -48,7 +49,7 @@ export class GameQuestions {
       gameData = {
           questions: questions,
           totalQuestions: questions.length,
-          generatedAt: Date.now(),
+          generatedAt: new Date(),
       };
     } else {
       console.error("An error occured: Artists or Albums array(s) are empty!");

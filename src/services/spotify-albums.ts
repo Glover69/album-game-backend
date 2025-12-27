@@ -49,11 +49,12 @@ export class SpotifyAlbums {
             while (count < maxAlbumsForSet){
               let randomNo = getRandomIntInclusive(0, totalAlbums);
   
-              if(selectedIndices.find(n => n == randomNo)){
+              while(selectedIndices.find(n => n == randomNo)){
                   randomNo = getRandomIntInclusive(0, totalAlbums)
-              } else{
-                  selectedIndices.push(randomNo);
               }
+
+              selectedIndices.push(randomNo);
+              
   
               const album: FinalAlbumList | undefined = jointData[randomNo];
               if (album) {

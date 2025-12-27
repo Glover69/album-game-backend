@@ -10,7 +10,7 @@ export function Questions({ questions }: { questions: GameQuestion[] }) {
                         {<img src={question.albumCover} alt={question.albumName} style={{ width: '100%' }} />}
                         <h3>{question.albumName}:{question.correctAnswer}</h3>
                         <p>{question?.options?.map(a => a).join(', ')}</p>
-                       {/* <small>{album.release_date}</small> */}
+                        <small>{question.releaseDate}</small>
                     </div>
                 ))}
             </div>

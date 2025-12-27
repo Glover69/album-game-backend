@@ -111,6 +111,7 @@ export type FinalAlbumList = {
   name?: string;
   artists?: string[];
   image?: Image;
+  release_date?: string;
 }
 
 
@@ -123,12 +124,12 @@ export type GameQuestion = {
   options: string[];             // ["Frank Ocean", "Tyler the Creator", "Kendrick Lamar", "Drake"]
   genre?: string;                // "R&B" (optional, for hints)
   difficulty?: 'easy' | 'medium' | 'hard';
-  releaseYear?: number;          // 2016 (optional extra info)
+  releaseDate?: string;          // 2016 (optional extra info)
 }
 
 // The complete payload sent to frontend
 export type GameData = {
   questions: GameQuestion[];     // Array of 100 questions
   totalQuestions: number;        // 100
-  generatedAt: number;           // Timestamp
+  generatedAt: Date;           // Timestamp
 }
