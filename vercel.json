@@ -1,12 +1,6 @@
 {
-  "version": 2,
-  "name": "uncoverrr-backend",
-  "builds": [
-    {
-      "src": "/dist/index.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "buildCommand": "bun install && bun run build",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "/(.*)",
