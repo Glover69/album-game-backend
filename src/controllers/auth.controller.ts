@@ -1,5 +1,5 @@
 import type { Context } from "hono";
-import { SpotifyAuthService } from "../services/spotify-auth"
+import { SpotifyAuthService } from "../services/spotify-auth.service"
 
 
 export const getAccessToken = async (c: Context) => {

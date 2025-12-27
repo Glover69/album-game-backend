@@ -1,10 +1,11 @@
 import { Hono } from "hono";
 import { getNewReleases } from "../controllers/spotify-albums.controller";
-import { getQuestions } from "../controllers/game-questions.controller";
+import { generateDailyGame, getDailyQuestions } from "../controllers/game-questions.controller";
 
 
 const app = new Hono()
 
-app.get('/get-questions', getQuestions);
+app.get('/get-questions', getDailyQuestions);
+app.get('/cron/generate-daily-game', generateDailyGame)
 
 export default app;

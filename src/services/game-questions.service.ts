@@ -1,5 +1,5 @@
 import { randomUUIDv5 } from "bun";
-import { getRandomIntInclusive, SpotifyAlbums } from "./spotify-albums";
+import { getRandomIntInclusive, SpotifyAlbums } from "./spotify-albums.service";
 import type { GameData, GameQuestion } from "../types/data";
 
 export class GameQuestions {
@@ -49,7 +49,7 @@ export class GameQuestions {
       gameData = {
           questions: questions,
           totalQuestions: questions.length,
-          generatedAt: new Date(),
+          generatedAt: new Date().toISOString().split('T')[0],
       };
     } else {
       console.error("An error occured: Artists or Albums array(s) are empty!");

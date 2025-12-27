@@ -131,5 +131,5 @@ export type GameQuestion = {
 export type GameData = {
   questions: GameQuestion[];     // Array of 100 questions
   totalQuestions: number;        // 100
-  generatedAt: Date;           // Timestamp
+  generatedAt?: string;           // Timestamp
 }

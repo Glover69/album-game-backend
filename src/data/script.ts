@@ -2,7 +2,7 @@ import { fetch } from "bun";
 
 
 import { createObjectCsvWriter } from "csv-writer";
-import { SpotifyAuthService, type AccessTokenResponse } from "../services/spotify-auth";
+import { SpotifyAuthService, type AccessTokenResponse } from "../services/spotify-auth.service";
 import type { AlbumsResponse, Artist, FinalAlbumList, Image } from "../types/data";
 
 const clientID = process.env.CLIENT_ID;

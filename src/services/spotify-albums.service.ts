@@ -1,5 +1,5 @@
 import type { Album, AlbumsResponse, FinalAlbumList } from "../types/data";
-import { SpotifyAuthService } from "./spotify-auth";
+import { SpotifyAuthService } from "./spotify-auth.service";
 
 
 const apiBaseURL = process.env.API_URL;

@@ -1,5 +1,5 @@
 import type { Context } from "hono";
-import { SpotifyAlbums } from "../services/spotify-albums";
+import { SpotifyAlbums } from "../services/spotify-albums.service";
 import { AlbumList } from "../template/albums";
 import type { FinalAlbumList, Image } from "../types/data";
 
