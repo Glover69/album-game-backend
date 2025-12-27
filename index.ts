@@ -23,16 +23,14 @@ app.use('*', cors({
 
 app.use('*', logger());
 
-
+app.route('/api/auth', authRoutes);
+app.route('/api/albums', spotifyAlbumRoutes)
+app.route('/api/game', gameQuestionsRoutes)
 
 Bun.serve({
     fetch: app.fetch,
     port: process.env.PORT || 3030,
 })
-
-app.route('/api/auth', authRoutes);
-app.route('/api/albums', spotifyAlbumRoutes)
-app.route('/api/game', gameQuestionsRoutes)
 
 
 
