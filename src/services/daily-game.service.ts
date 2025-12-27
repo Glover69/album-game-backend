@@ -14,7 +14,7 @@ export class DailyGameService {
     const today = this.getDateString();
     
     // Check if already exists
-    const existing = await DailyGame.findOne({ gameDate: today });
+    const existing = await DailyGame.findOne({ generatedAt: today });
     if (existing) {
       console.log(`Daily game for ${today} already exists`);
       return {
@@ -45,7 +45,7 @@ export class DailyGameService {
 
   // Fetch game by date (used by frontend)
   public static async getGameByDate(date: string | undefined): Promise<GameData | null> {
-    const game = await DailyGame.findOne({ gameDate: date });
+    const game = await DailyGame.findOne({ generatedAt: date });
     
     if (!game) {
       return null;
