@@ -1,12 +1,4 @@
 {
-  "buildCommand": "bun install && bun run build",
-  "outputDirectory": "dist",
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.js"
-    }
-  ],
   "crons": [
     {
       "path": "/api/game/cron/generate-daily-game",
@@ -14,3 +6,4 @@
     }
   ]
 }
+
