@@ -1,8 +1,22 @@
 services:
+  - type: web
+    name: album-game-backend
+    runtime: bun  # Native Bun runtime!
+    plan: free
+    buildCommand: bun install
+    startCommand: bun run index.ts
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: CRON_SECRET
+        sync: false
+      - key: PORT
+        value: 3030
+
 # Cron job to generate daily questions
   - type: cron
     name: daily-game-generator
-    runtime: docker
-    dockerfilePath: ./Dockerfile
+    runtime: bun
     schedule: "0 0 * * *"  # Every day at midnight UTC
+    buildCommand: bun install
     dockerCommand: "bun run src/scripts/generate-daily.ts"
