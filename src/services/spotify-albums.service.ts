@@ -40,7 +40,7 @@ export class SpotifyAlbums {
         const jointData = await addAlbumListsTogether();
 
         let count = 0;
-        const maxAlbumsForSet = 50;
+        const maxAlbumsForSet = 100;
         const totalAlbums = jointData.length;
         let selectedIndices: number[] = [];
         const finalList: FinalAlbumList[] = [];
