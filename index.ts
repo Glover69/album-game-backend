@@ -27,6 +27,10 @@ app.route('/api/auth', authRoutes);
 app.route('/api/albums', spotifyAlbumRoutes)
 app.route('/api/game', gameQuestionsRoutes)
 
+app.get('/health', (c) => {
+  return c.json({ status: 'ok', message: 'Server is up and running!' })
+})
+
 Bun.serve({
     fetch: app.fetch,
     port: process.env.PORT || 3030,
