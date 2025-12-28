@@ -13,7 +13,7 @@ const app = new Hono()
 connectDB()
 
 app.use('*', cors({
-  origin: ['http://localhost:4200'], // Your frontend URLs
+  origin: ['http://localhost:4200', 'https://uncoverrr.vercel.app'], // Your frontend URLs
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
   exposeHeaders: ['Content-Length'],
